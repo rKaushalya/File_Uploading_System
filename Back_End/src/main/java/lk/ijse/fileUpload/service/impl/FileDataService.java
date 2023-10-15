@@ -39,7 +39,7 @@ public class FileDataService implements lk.ijse.fileUpload.service.FileDataServi
     public byte[] downloadImage(String fileName) throws IOException {
         Optional<FileData> fileData = repo.findByName(fileName);
         String filePath = fileData.get().getFilePath();
-        byte[] image = Files.readAllBytes(new File(filePath).toPath());
-        return image;
+        byte[] images = Files.readAllBytes(new File(filePath).toPath());
+        return images;
     }
 }
