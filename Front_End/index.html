@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Uploading System</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+</head>
+<body>
+    <main>
+        <section>
+            <img id="image" src="assets/img/noImage.jpg">
+
+            <form>
+                <label for="file">Choose file to upload</label>
+                <input type="file" id="file" name="file" multiple>
+
+                <progress max="100" value="0"></progress>
+
+                <button type="submit">Submit</button>
+            </form>
+
+            <div id="tbl" class="col-12 col-lg-8 mt-3">
+                <table class="table table-bordered table-hover">
+                    <thead class="bg-danger text-white">
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Photo</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tblImage">
+
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+    </main>
+</body>
+</html>
