@@ -21,7 +21,9 @@ public class FileDataService implements lk.ijse.fileUpload.service.FileDataServi
 
     @Override
     public String uploadImage(MultipartFile file) throws IOException {
+
         String filePath = FOLDER_PATH+file.getOriginalFilename();
+
         FileData fileData = repo.save(FileData.builder()
                 .name(file.getOriginalFilename())
                 .type(file.getContentType())
@@ -37,9 +39,13 @@ public class FileDataService implements lk.ijse.fileUpload.service.FileDataServi
 
     @Override
     public byte[] downloadImage(String fileName) throws IOException {
+
         Optional<FileData> fileData = repo.findByName(fileName);
+
         String filePath = fileData.get().getFilePath();
+
         byte[] images = Files.readAllBytes(new File(filePath).toPath());
+
         return images;
     }
 }

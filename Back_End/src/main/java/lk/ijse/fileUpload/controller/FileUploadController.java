@@ -20,7 +20,7 @@ public class FileUploadController {
     private FileDataService service;
 
     @PostMapping
-    public ResponseUtil saveImage(@RequestParam("file")MultipartFile file) throws IOException {
+    public ResponseUtil saveImage(@RequestParam("file") MultipartFile file) throws IOException {
         String fileData = service.uploadImage(file);
         return new ResponseUtil("OK","Image Saved",fileData);
     }
